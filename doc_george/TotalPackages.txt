@@ -1,0 +1,4 @@
+Métrica: Total Packages
+Como foi implementado:
+Foi considerado que cada diretório de um modulo é um pacote.
+Para todos os modulos do projeto foi extraído a estrutura de diretórios de seu(s) arquivo(s) e adiconado a uma lista, caso esse diretório já não esteja nesta lista. A partir dai, é retornado o tamanho desta lista, indicando o total de pacotes. 

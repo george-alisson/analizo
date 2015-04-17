@@ -6,6 +6,7 @@ use Analizo::GlobalMetric::TotalAbstractClasses;
 use Analizo::GlobalMetric::MethodsPerAbstractClass;
 use Analizo::GlobalMetric::TotalEloc;
 use Analizo::GlobalMetric::ChangeCost;
+use Analizo::GlobalMetric::TotalPackages;
 
 use Statistics::Descriptive;
 
@@ -36,6 +37,7 @@ sub _initialize_calculators {
     total_methods_per_abstract_class  => new Analizo::GlobalMetric::MethodsPerAbstractClass(model => $model),
     total_eloc                        => new Analizo::GlobalMetric::TotalEloc(model => $model),
     change_cost                       => Analizo::GlobalMetric::ChangeCost->new(model => $model),
+    total_packages                    => new Analizo::GlobalMetric::TotalPackages(model => $model),
   );
   return \%calculators;
 }
