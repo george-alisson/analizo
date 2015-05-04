@@ -1,0 +1,3 @@
+Métrica: Fan Out
+Como foi implementado:
+Para cada modulo, foi verificado as chamadas para outros módulos. Caso a chamada seja feita para os mesmo módulos, essas mão entram na contagem.

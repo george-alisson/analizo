@@ -1,0 +1,3 @@
+Métrica: Cyclomatic Complexity
+Como foi implementado:
+Para cada módulo, foi calculado a soma dos caminhos condicionais de todas as funções, se houverem.

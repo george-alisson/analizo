@@ -1,0 +1,3 @@
+Métrica: Calls
+Como foi implementado:
+Para cada módulo, foi verificado a quantidade de chamadas que eles fazem para todos os métodos deste módulo.

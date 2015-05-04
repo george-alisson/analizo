@@ -1,0 +1,3 @@
+Métrica: Height of Inheritance Tree
+Como foi implementado:
+Para cada modulo, foi verificado se ele é pai de outro modulo. Caso seja, é verificado se o seu filho é pai de algum modulo. É verificado também o numero de irmãos de cada modulo para não entar na contagem da altura.

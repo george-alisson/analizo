@@ -1,0 +1,73 @@
+<svg width="600" height="210">
+  <g fill="aquamarine">
+     <rect x="240" y="0" width="80" height="30"/>
+     <rect x="240" y="30" width="80" height="30"/>
+  </g>
+  <g fill="yellow">
+     <rect x="240" y="60" width="160" height="30"/>
+     <rect x="180" y="90" width="220" height="30"/>
+     <rect x="120" y="120" width="280" height="30"/>
+     <rect x="60" y="150" width="340" height="30"/>
+     <rect x="0" y="180" width="400" height="30"/>
+  </g>
+  <g fill="skyblue">
+     <rect x="400" y="120" width="80" height="30"/>
+     <rect x="400" y="150" width="140" height="30"/>
+     <rect x="400" y="180" width="200" height="30"/>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
+     <text x="245" y="22">NDD</text>
+     <text x="245" y="52">HIT</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
+     <text x="245" y="82">NOP</text>
+     <text x="185" y="112">NOC</text>
+     <text x="125" y="142">NOM</text>
+     <text x="65" y="172">LOC</text>
+     <text x="5" y="202">CYCLO</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="end">
+     <text x="475" y="142">NOM</text>
+     <text x="535" y="172">CALL</text>
+     <text x="595" y="202">FOUT</text>
+  </g>
+  <g fill="lime">
+    <rect id="ndd-color" x="320" y="0" width="80" height="30"/>
+    <rect id="hit-color" x="320" y="30" width="80" height="30"/>
+  </g>
+  <g fill="lime">
+     <rect id="noc-nop-color" x="180" y="60" width="60" height="30"/>
+     <rect id="nom-noc-color" x="120" y="90" width="60" height="30"/>
+     <rect id="loc-nom-color" x="60" y="120" width="60" height="30"/>
+     <rect id="cyclo-loc-color" x="0" y="150" width="60" height="30"/>
+  </g>
+  <g fill="lime">
+     <rect id="call-nom-color" x="480" y="120" width="60" height="30"/>
+     <rect id="fout-call-color" x="540" y="150" width="60" height="30"/>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="end">
+     <text id="ndd" x="395" y="22">0.00</text>
+     <text id="hit" x="395" y="52">0.00</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="end">
+     <text id="nop" x="395" y="82">0</text>
+     <text id="noc" x="395" y="112">0</text>
+     <text id="nom" x="395" y="142">0</text>
+     <text id="loc" x="395" y="172">0</text>
+     <text id="cyclo" x="395" y="202">0</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
+     <text id="call" x="405" y="172">0</text>
+     <text id="fout" x="405" y="202">0</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="end">
+     <text id="noc-nop" x="238" y="82">0.00</text>
+     <text id="nom-noc" x="178" y="112">0.00</text>
+     <text id="loc-nom" x="118" y="142">0.00</text>
+     <text id="cyclo-loc" x="58" y="172">0.00</text>
+  </g>
+  <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
+     <text id="call-nom" x="485" y="142">0.00</text>
+     <text id="fout-call" x="545" y="172">0.00</text>
+  </g>
+</svg>

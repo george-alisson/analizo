@@ -39,6 +39,10 @@ use Analizo::Metric::ArgumentNull;
 use Analizo::Metric::StackAddressIntoGlobalVariable;
 use Analizo::Metric::ResultIsGarbage;
 use Analizo::Metric::PotentialInsecureTempFileInCall;
+use Analizo::Metric::HeightOfInheritanceTree;
+use Analizo::Metric::FanOut;
+use Analizo::Metric::Calls;
+use Analizo::Metric::CyclomaticComplexity;
 
 __PACKAGE__->mk_accessors(qw(model metric_calculators));
 
@@ -94,7 +98,10 @@ sub _initialize_metric_calculators {
     saigv                => new Analizo::Metric::StackAddressIntoGlobalVariable(model => $model),
     rogu                 => new Analizo::Metric::ResultIsGarbage(model => $model),
     pitfc                => new Analizo::Metric::PotentialInsecureTempFileInCall(model => $model),
-
+    hit                  => new Analizo::Metric::HeightOfInheritanceTree(model => $model),
+    fout                 => new Analizo::Metric::FanOut(model => $model),
+    calls                => new Analizo::Metric::Calls(model => $model),
+    cyclo                => new Analizo::Metric::CyclomaticComplexity(model => $model),
   );
   return \%calculators;
 }

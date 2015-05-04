@@ -36,8 +36,8 @@ sub _initialize_calculators {
     total_abstract_classes            => new Analizo::GlobalMetric::TotalAbstractClasses(model => $model),
     total_methods_per_abstract_class  => new Analizo::GlobalMetric::MethodsPerAbstractClass(model => $model),
     total_eloc                        => new Analizo::GlobalMetric::TotalEloc(model => $model),
-    change_cost                       => Analizo::GlobalMetric::ChangeCost->new(model => $model),
     total_packages                    => new Analizo::GlobalMetric::TotalPackages(model => $model),
+    change_cost                       => Analizo::GlobalMetric::ChangeCost->new(model => $model),
   );
   return \%calculators;
 }
@@ -49,7 +49,12 @@ sub _initialize_metric_report {
     total_modules_with_defined_attributes => 0,
     total_nom => 0,
     total_loc => 0,
-    total_cof => 0
+    total_cof => 0,
+    total_cyclo => 0,
+    total_ndd => 0,
+    total_hit => 0,
+    total_fout => 0,
+    total_calls => 0,
   );
   return \%metric_report;
 }
@@ -61,6 +66,11 @@ sub list {
     total_modules => "Total Number of Modules",
     total_nom => "Total Number of Methods",
     total_loc => "Total Lines of Code",
+    total_cyclo => "Total Cyclomatic Complexity",
+    total_ndd => "Total Number of Direct Descendants",
+    total_hit => "Total Height of Inheritance Tree",
+    total_fout => "Total Fan Out",
+    total_calls => "Total Calls",
     total_modules_with_defined_methods => "Total number of modules with at least one defined method",
     total_modules_with_defined_attributes => "Total number of modules with at least one defined attributes"
   );
@@ -84,6 +94,11 @@ sub _update_metric_report {
   $self->metric_report->{'total_modules_with_defined_attributes'} += 1 if $values->{'noa'} > 0;
   $self->metric_report->{'total_nom'} += $values->{'nom'};
   $self->metric_report->{'total_loc'} += $values->{'loc'};
+  $self->metric_report->{'total_cyclo'} += $values->{'cyclo'};
+  $self->metric_report->{'total_ndd'} += $values->{'noc'};
+  $self->metric_report->{'total_hit'} += $values->{'hit'};
+  $self->metric_report->{'total_fout'} += $values->{'fout'};
+  $self->metric_report->{'total_calls'} += $values->{'calls'};
 }
 
 sub _add_values_to_values_lists {
@@ -108,6 +123,7 @@ sub report {
   $self->_include_metrics_from_calculators;
   $self->_add_statistics;
   $self->_add_total_coupling_factor;
+  $self->_add_metric_pyramid;
 
   return \%{$self->metric_report};
 }
@@ -178,7 +194,29 @@ sub _number_of_combinations {
   return $total_modules * ($total_modules - 1);
 }
 
+sub _add_metric_pyramid {
+  my ($self) = @_;
 
+  $self->metric_report->{'pyramid_ave_ndd'} = 0;
+  $self->metric_report->{'pyramid_ave_hit'} = 0;
+  $self->metric_report->{'pyramid_mod_nop'} = 0;
+  $self->metric_report->{'pyramid_nom_mod'} = 0;
+  $self->metric_report->{'pyramid_loc_nom'} = 0;
+  $self->metric_report->{'pyramid_cyc_loc'} = 0;
+  
+  $self->metric_report->{'pyramid_cal_nom'} = 0;
+  $self->metric_report->{'pyramid_fou_cal'} = 0;
+
+  $self->metric_report->{'pyramid_ave_ndd'} = ($self->metric_report->{'total_ndd'} / $self->metric_report->{'total_modules'}) if $self->metric_report->{'total_modules'} > 0;
+  $self->metric_report->{'pyramid_ave_hit'} = ($self->metric_report->{'total_hit'} / $self->metric_report->{'total_modules'}) if $self->metric_report->{'total_modules'} > 0;
+  $self->metric_report->{'pyramid_mod_nop'} = ($self->metric_report->{'total_modules'} / $self->metric_report->{'total_packages'}) if $self->metric_report->{'total_packages'} > 0;
+  $self->metric_report->{'pyramid_nom_mod'} = ($self->metric_report->{'total_nom'} / $self->metric_report->{'total_modules'}) if $self->metric_report->{'total_modules'} > 0;
+  $self->metric_report->{'pyramid_loc_nom'} = ($self->metric_report->{'total_loc'} / $self->metric_report->{'total_nom'}) if $self->metric_report->{'total_nom'} > 0;
+  $self->metric_report->{'pyramid_cyc_loc'} = ($self->metric_report->{'total_cyclo'} / $self->metric_report->{'total_loc'}) if $self->metric_report->{'total_loc'} > 0;
+  
+  $self->metric_report->{'pyramid_cal_nom'} = ($self->metric_report->{'total_calls'} / $self->metric_report->{'total_nom'}) if $self->metric_report->{'total_nom'} > 0;
+  $self->metric_report->{'pyramid_fou_cal'} = ($self->metric_report->{'total_fout'} / $self->metric_report->{'total_calls'}) if $self->metric_report->{'total_calls'} > 0;
+}
 
 1;
 

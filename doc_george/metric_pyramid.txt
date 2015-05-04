@@ -1,0 +1,3 @@
+analizo metric-pyramid
+
+Gera uma pirâmide métrica a partir do arquivo .yml resultado da execução de "analizo metrics". A pirâmide é gerada em svg a partir do modelo "pyramid.svg" na pasta templates.

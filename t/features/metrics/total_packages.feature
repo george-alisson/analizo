@@ -9,6 +9,6 @@ Feature: total number of packages
     Then analizo must report that the project has total_packages = <value>
     Examples:
       | language | value |
-      | cpp      |   2   |
-      | java     |   3   |
+      | cpp      |   3   |
+      | c        |   2   |
 
