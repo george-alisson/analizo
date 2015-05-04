@@ -1,4 +1,7 @@
 <svg width="600" height="210">
+  <g fill="white">
+    <rect x="0" y="0" width="600" height="210"/>
+  </g>
   <g fill="aquamarine">
      <rect x="240" y="0" width="80" height="30"/>
      <rect x="240" y="30" width="80" height="30"/>
@@ -69,5 +72,15 @@
   <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
      <text id="call-nom" x="485" y="142">0.00</text>
      <text id="fout-call" x="545" y="172">0.00</text>
+  </g>
+  <g>
+    <rect x="530" y="0" width="15" height="15" fill="red"/>
+    <rect x="530" y="15" width="15" height="15" fill="lime"/>
+    <rect x="530" y="30" width="15" height="15" fill="royalblue"/>
+  </g>
+  <g font-size="10" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
+     <text x="550" y="12">Hight</text>
+     <text x="550" y="27">Medium</text>
+     <text x="550" y="42">Low</text>
   </g>
 </svg>
