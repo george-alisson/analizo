@@ -84,7 +84,7 @@ or to `terceiro@softwarelivre.org`. Or create a pull request on github.
 To create a patch:
 
 ```
-$ git clone git://gitorious.org/analizo/analizo.git
+$ git clone https://github.com/analizo/analizo.git
 $ cd analizo
 $ edit file
 $ git commit file
@@ -127,7 +127,7 @@ and git (your operating system probably already has packages for these)
 2) Install Doxyparse
 
 ```
-$ git clone git://gitorious.org/analizo/doxyparse.git
+$ git clone https://gitlab.com/analizo/doxyparse.git
 $ cd doxyparse
 $ ./configure --with-doxyparse
 $ make
