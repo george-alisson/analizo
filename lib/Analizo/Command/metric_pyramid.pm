@@ -69,7 +69,9 @@ sub _generate_svg {
 
   my $parser = XML::LibXML->new();
   my $filename = "$FindBin::Bin/templates/pyramid.svg";
-  my $svg = $parser->parse_file($filename);
+  my $xml = $parser->parse_file($filename);
+  my $svg = XML::LibXML::XPathContext->new($xml);
+  $svg->registerNs('x', 'http://www.w3.org/2000/svg');
 
   $self->_set_value_color($svg, "ndd", $values->{pyramid_ave_ndd}, $self->_color_by_value($values->{pyramid_ave_ndd}, 0.25, 0.57));
   $self->_set_value_color($svg, "hit", $values->{pyramid_ave_hit}, $self->_color_by_value($values->{pyramid_ave_hit}, 0.09, 0.32));
@@ -89,7 +91,7 @@ sub _generate_svg {
   $self->_set_value($svg, "call", $values->{total_calls});
   $self->_set_value($svg, "fout", $values->{total_fout});
 
-  return $svg;
+  return $xml;
 }
 
 sub _color_by_value {
@@ -107,7 +109,7 @@ sub _color_by_value {
 sub _set_value {
   my ($self, $svg, $name, $value) = @_;
  
-  my $query = "//text[\@id=\'$name\']/text()";
+  my $query = "//x:text[\@id=\'$name\']/text()";
   my ($node) = $svg->findnodes($query);
   $node->setData($value);
 }
@@ -115,7 +117,7 @@ sub _set_value {
 sub _set_value_color {
   my ($self, $svg, $name, $value, $color) = @_;
  
-  my $query = "//rect[\@id=\'$name-color\']";
+  my $query = "//x:rect[\@id=\'$name-color\']";
   my($node) = $svg->findnodes($query);
   $node->setAttribute('fill' => $color);
 

@@ -43,9 +43,9 @@ sub _number_of_functions_called_by {
     my $key;
     my $value;
 	while (($key, $value) = each %{$self->model->calls->{$function}}) {
-      if ($value eq "direct") {
+      #if ($value eq "direct") {
         $count++;
-      }
+      #}
     }
   }
   return $count;

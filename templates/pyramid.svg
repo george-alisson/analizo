@@ -1,21 +1,22 @@
-<svg width="600" height="210">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="210" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g fill="white">
     <rect x="0" y="0" width="600" height="210"/>
   </g>
   <g fill="aquamarine">
-     <rect x="240" y="0" width="80" height="30"/>
+     <rect x="240" y="0" width="80" height="31"/>
      <rect x="240" y="30" width="80" height="30"/>
   </g>
   <g fill="yellow">
-     <rect x="240" y="60" width="160" height="30"/>
-     <rect x="180" y="90" width="220" height="30"/>
-     <rect x="120" y="120" width="280" height="30"/>
-     <rect x="60" y="150" width="340" height="30"/>
+     <rect x="240" y="60" width="160" height="31"/>
+     <rect x="180" y="90" width="220" height="31"/>
+     <rect x="120" y="120" width="280" height="31"/>
+     <rect x="60" y="150" width="340" height="31"/>
      <rect x="0" y="180" width="400" height="30"/>
   </g>
   <g fill="skyblue">
-     <rect x="400" y="120" width="80" height="30"/>
-     <rect x="400" y="150" width="140" height="30"/>
+     <rect x="400" y="120" width="80" height="31"/>
+     <rect x="400" y="150" width="140" height="31"/>
      <rect x="400" y="180" width="200" height="30"/>
   </g>
   <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="start">
@@ -35,17 +36,17 @@
      <text x="595" y="202">FOUT</text>
   </g>
   <g fill="lime">
-    <rect id="ndd-color" x="320" y="0" width="80" height="30"/>
+    <rect id="ndd-color" x="320" y="0" width="80" height="31"/>
     <rect id="hit-color" x="320" y="30" width="80" height="30"/>
   </g>
   <g fill="lime">
-     <rect id="noc-nop-color" x="180" y="60" width="60" height="30"/>
-     <rect id="nom-noc-color" x="120" y="90" width="60" height="30"/>
-     <rect id="loc-nom-color" x="60" y="120" width="60" height="30"/>
+     <rect id="noc-nop-color" x="180" y="60" width="60" height="31"/>
+     <rect id="nom-noc-color" x="120" y="90" width="60" height="31"/>
+     <rect id="loc-nom-color" x="60" y="120" width="60" height="31"/>
      <rect id="cyclo-loc-color" x="0" y="150" width="60" height="30"/>
   </g>
   <g fill="lime">
-     <rect id="call-nom-color" x="480" y="120" width="60" height="30"/>
+     <rect id="call-nom-color" x="480" y="120" width="60" height="31"/>
      <rect id="fout-call-color" x="540" y="150" width="60" height="30"/>
   </g>
   <g font-size="20" font-family="sans-serif" fill="black" stroke="none" text-anchor="end">

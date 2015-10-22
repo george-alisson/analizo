@@ -43,10 +43,10 @@ sub _number_of_diferent_functions_called_by {
     my $key;
     my $value;
     while (($key, $value) = each %{$self->model->calls->{$function}}) {
-      if($value eq "direct") {
+      #if($value eq "direct") {
         my $function_module = $self->model->members->{$key}; 
         push(@modules, $function_module) unless grep{$_ eq $function_module} @modules;
-      }
+      #}
     }
   }
   return scalar(@modules) -1;
